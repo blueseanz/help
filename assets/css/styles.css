@@ -1,13 +1,3 @@
-/*	* : select all elements
-
-	box-sizing: border-box; 
-	The box-sizing property allows us to include the padding and border in an element's total width and height.
-	If you set box-sizing: border-box; on an element, padding and border are included in the width and height.
-
-	outline: none;
-	set dotted outline around the border box
-
-*/
 * {
 	margin: 0;
 	padding: 0;
@@ -15,20 +5,9 @@
 	box-sizing: border-box;
 	outline: none;
 }
-
 ul li, ol li {
 	list-style: none;
 }
-
-/*The content property is used with the ::before and ::after pseudo-elements, to insert generated content.
-
-  The display property specifies the display behavior (the type of rendering box) of an element.
-  table	Let the element behave like a <table> element
-  
-  Elements after a floating element will flow around it. Use the "clearfix" hack to fix the problem
-
-  clear: both; Do not allow floating elements on the left or the right side of a specified <p> element:
-*/
 .clearfix:before, .clearfix:after {
 	content: "";
 	display: table;
@@ -41,9 +20,6 @@ body {
 	font: .81em/150% "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
 	color: #444;
 }
-
-/* Sets the kind of text decoration to use (like underline, overline, line-through)
- */
 a {
 	color: #6685CC;
 	text-decoration: none;
@@ -69,11 +45,7 @@ a:focus {
 header {
 	height: 80px;
 }
-/* Logo and h1 heading 
-
-   The text-indent property specifies the indentation of the first line in a text-block.
-
-*/
+/* Logo and h1 heading */
 header h1#logo {
 	background: url(../img/logo.png) no-repeat;
 	width: 300px;
@@ -250,7 +222,7 @@ div#main {
 }
 /* ------------------------- Main top section */
 #main-top-section {
-	background: url(../img/child-1.jpg) no-repeat right bottom, url(../img/bg-2.png) no-repeat 20% bottom;
+	background: url(../img/header-jumbo.gif) no-repeat right bottom, url(../img/bg-2.png) no-repeat 20% bottom;
 	width: 100%;
 	height: 320px;
 	margin-top: 18px;
@@ -284,7 +256,7 @@ div#main {
 .donate-button-submit {
 	margin:0;
 }
-.donate-button-header {
+.donate-botton-header {
 	font-size:16px;
 	font-weight:bold;
 	color:#fff;
@@ -369,10 +341,7 @@ footer #social-icons a {
 @font-face {
 	font-family: 'icomoon';
 	src: url('../fonts/icomoon.eot');
-	src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), 
-	url('../fonts/icomoon.svg#icomoon') format('svg'), 
-	url('../fonts/icomoon.woff') format('woff'), 
-	url('../fonts/icomoon.ttf') format('truetype');
+	src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('../fonts/icomoon.svg#icomoon') format('svg'), url('../fonts/icomoon.woff') format('woff'), url('../fonts/icomoon.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
