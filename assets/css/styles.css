@@ -286,7 +286,12 @@ p.donation-address {
 	margin-bottom: 5px;
 	color: #999;
 }
-
+/*
+#donate-form-container input[type=submit] {
+	width: 150px;
+	height: 60px;
+}
+*/
 #donate-form-container h3 {
 	font-size: 1.4em;
 	font-weight: normal;
@@ -325,8 +330,15 @@ label.donation-heading {
 }
 #video-container {
 	width:390px;
-	height:250px;
+	height:300px;
 	float: right;
+}
+#map-container {
+	background: #eee;
+	width:300px;
+	height:240px;
+	float: right;
+	margin-right: 10px
 }
 /* Footer */
 footer {
