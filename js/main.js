@@ -5,6 +5,7 @@ window.onload = function() {
 	/* --------- login module start -------------- */
 
 	(function() {
+		// a self contained "namespace"
 
 		//login section elements
 		var loginLink = document.getElementById("login-link");
@@ -85,18 +86,13 @@ window.onload = function() {
 		var donateLaterLink = document.getElementById('donate-later-link');
 		var checkedInd = 2;
 
-		function showDonationForm() {		
+		function showDotationForm() {		
 			donationAddress.style.display = "none";
 			donateFormContainer.style.display = "block";
 		}
-
-        // Register the event listeners 
-		donateBotton.addEventListener('click', showDonationForm, false);
-		customAmount.addEventListener('focus', onCustomAmountFocus, false);
-		donateLaterLink.addEventListener('click', donateLater, false);
-		customAmount.addEventListener('blur', onCustomAmountBlur, false);
+		donateBotton.addEventListener('click', showDotationForm, false);
 		
-		//uncheck selected radio buttons if the custom amount was chosen
+		//uncheck selected radio buttons if custom amount was choosen
 		function onCustomAmountFocus() {
 			for (var i = 0; i < donateForm.length; i++) {
 				if (donateForm[i].type == 'radio') {
@@ -110,6 +106,7 @@ window.onload = function() {
 				}
 			}
 		}
+		customAmount.addEventListener('focus', onCustomAmountFocus, false);
 		
 		function onCustomAmountBlur() {
 			var value = customAmount.value;
@@ -119,11 +116,13 @@ window.onload = function() {
 				donateForm[checkedInd].checked = true;
 			}
 		}
+		customAmount.addEventListener('blur', onCustomAmountBlur, false);
 		
 		function donateLater(){
 			donationAddress.style.display = "block";
 			donateFormContainer.style.display = "none";
 		}
+		donateLaterLink.addEventListener('click', donateLater, false);
 		
 	})();
 	/* --------- make donation module end -------------- */

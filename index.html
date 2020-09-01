@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-				
+		<meta charset="utf-8">			
 		<title>Help People, Help The World | Home Page</title>
 		<link rel="stylesheet" href="assets/css/styles.css">
 	</head>
@@ -74,7 +73,7 @@
 							<input type="hidden" name="business" value="email-registered-in-paypal@site-url.com">
 							<input type="hidden" name="item_name" value="Donation">
 							<input type="hidden" name="currency_code" value="USD">
-							<div class="donation-form-section">
+							<div class="donation-form-section" id="donationAmounts">
 								<label class="donation-heading">Please select or enter
 									<br/>
 									donation amount</label>
@@ -162,16 +161,13 @@
 				</section>
 				<section id="main-bottom-section">
 					<div id="video-container">
-						<video controls poster="assets/media/intro.jpg" width="390px" height="240" preload="metadata">
-							<source src="assets/media/intro.mp4" type="video/mp4">
-							<source src="assets/media/intro.webm" type="video/webm">
-							<p>Sorry, your browser doesn't support video</p>
-						</video>
-						<!--Note: looping (or any sort of seeking, for that matter) in < video > elements 
-							on Chrome only works if the video file was served up by a server 
-							that understands partial content requests -->
+						<div id="video-container">
+							<iframe src="http://www.youtube.com/embed/zcruIov45bI?wmode=transparent&hd=1&vq=hd720" frameborder="0" width="390" height="240"></iframe>
+							<!-- URL parameters  hd=1 vq=hd720 are forced YouTube to load video in HD quality-->
+
 							<h3>Video header goes here</h3>
 							<h5><a href="javascript:void(0);">More videos</a></h5>
+						</div>
 					</div>
 				</section>
 			</div>
