@@ -77,7 +77,7 @@ window.onload = function() {
 
 	/* --------- make donation module start -------------- */
 	(function() {
-		var donateBotton = document.getElementById('donate-botton');
+		var donateBotton = document.getElementById('donate-button');
 		var donationAddress = document.getElementById('donation-address');
 		var donateFormContainer = document.getElementById('donate-form-container');
 		var customAmount = document.getElementById('customAmount');
@@ -111,7 +111,7 @@ window.onload = function() {
 			var value = customAmount.value;
 
 			if (value == '') {
-  		        // The user haven't entered other amount
+
 				donateForm[checkedInd].checked = true;
 			}
 		}
@@ -126,7 +126,7 @@ window.onload = function() {
 	})();
 	/* --------- make donation module end -------------- */
 
-	/* --------- basic geolocation module start -------------- */
+	/* --------- geolocation with Modernizr test | embedding google maps module start -------------- */
 	(function() {
 	
 		var mapContainer = document.getElementById('map-container');
@@ -184,6 +184,6 @@ window.onload = function() {
 		}
 		
 	})();
-	/* --------- basic geolocation module end -------------- */
+	/* --------- geolocation | embedding google maps module start -------------- */
 
 }

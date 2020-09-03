@@ -256,7 +256,7 @@ div#main {
 .donate-button-submit {
 	margin:0;
 }
-.donate-botton-header {
+.donate-button-header {
 	font-size:16px;
 	font-weight:bold;
 	color:#fff;
@@ -334,11 +334,21 @@ label.donation-heading {
 	float: right;
 }
 #map-container {
+
+	width:300px;
+	height:300px;
+	float: right;
+	margin-right: 10px
+}
+#location-map {
 	background: #eee;
 	width:300px;
 	height:240px;
-	float: right;
-	margin-right: 10px
+}
+#location-ui {
+	padding-top: 8px;
+	font-size:0.9em;
+	line-height: 125%
 }
 /* Footer */
 footer {
