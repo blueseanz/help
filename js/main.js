@@ -2,8 +2,9 @@
  * @author
  */
 window.onload = function() {
-	/* --------- login module start -------------- */
 
+
+	/* --------- login module start -------------- */
 	(function() {
 		// a self contained "namespace"
 
@@ -128,61 +129,30 @@ window.onload = function() {
 
 	/* --------- geolocation with Modernizr test | embedding google maps module start -------------- */
 	(function() {
-	
-		var mapContainer = document.getElementById('map-container');
-		
-		// Success handler
-		function successGeoData(position) {
-			var successMessage = "We found your position!";
-			successMessage += '\n Latitude = ' + position.coords.latitude;
-			successMessage += '\n Longitude = ' + position.coords.longitude;
-			successMessage += '\n Accuracy = ' + position.coords.accuracy + ' meters';			
-			console.log(successMessage);
-			
-			var successMessageHTML = successMessage.replace(/\n/g, '<br />');
-			var currentContent = mapContainer.innerHTML;
-			mapContainer.innerHTML = currentContent + "<br />" + successMessageHTML;
-			
-		}
 
-        // error handler
-		function failGeoData(error) {
-			console.log('error code = ' + error.code);
 			
-			switch(error.code) {
-				case error.POSITION_UNAVALABLE:
-					errorMessage = "Can't get the location";
-					break;
-				case error.PERMISSION_DENIED:
-					errorMessage = "The user doesn't want to share location";
-					break;
-				case error.TIMEOUT:
-					errorMessage = "Timeout - Finding location takes too long";
-					break;
-				case error.UNKNOWN_ERROR:
-					errorMessage = "Unknown error: " + error.code;
-					break;
-			}
-			console.log(errorMessage);
-			mapContainer.innerHTML = errorMessage;	
-		}
-
-		if (navigator.geolocation) {
-			var startMessage = 'Browser supports geolocation API';
-			console.log(startMessage);
-			mapContainer.innerHTML = startMessage;
-			console.log('Checking your position...');
-			mapContainer.innerHTML = startMessage + '<br />Checking your position...';
-			
-			navigator.geolocation.getCurrentPosition(successGeoData, failGeoData, {
-				maximumAge : 60000,
-				enableHighAccuracy : true,
-				timeout : 5000
-			});
-		} else {
-			mapContainer.innerHTML ='Your browser does not support geolocation';
-		}
+		Modernizr.load({
 		
+		    // To emulate a non-supported geolocation either try this code in the browser that 
+		    // doesn't support geolocation or change the like below to be 
+  			// test: Modernizr.fakegeolocation,
+  				
+  			test: Modernizr.geolocation,
+  		
+  			  			
+  			// load script which is using browser native geolacation API and then load Google api
+  			yep: ['js/get-native-geo-data.js','https://www.google.com/jsapi'],
+  			
+  			// Use the alternative way of getting geolocation
+  			nope: ['js/get-geo-data-by-ip.js','https://www.google.com/jsapi'],
+ 			
+  			 // No matter what, do the following once everything else has loaded and executed
+  			complete : function () {
+  				// load maps module v3 of Google's maps api https://developers.google.com/loader/
+				google.load("maps", "3", {other_params: "sensor=false", 'callback':init});
+    		}
+
+		});
 	})();
 	/* --------- geolocation | embedding google maps module start -------------- */
 
